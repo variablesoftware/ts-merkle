@@ -80,7 +80,7 @@
     ":patch": "yarn version patch",
     ":minor": "yarn version minor",
     ":major": "yarn version major",
-    "release": "yarn clean && yarn build:release && git push && git push --tags && yarn npm publish --access public && ./sign-release.sh package.json",
+    "release": "yarn clean && yarn build:release && git push && git push --tags && yarn npm publish --access public && ./scripts/sign-release.sh package.json",
     "release:dry": "yarn clean && yarn build:release && npm pack --dry-run"
   },
   "repository": {
