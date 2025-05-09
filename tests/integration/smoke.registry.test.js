@@ -10,7 +10,9 @@ function run(cmd, opts = {}) {
   return execSync(cmd, { stdio: 'inherit', ...opts });
 }
 
-test('npm package can be installed and imported from registry (smoke test)', async () => {
+// Only run this test if the environment variable RUN_SMOKE_REGISTRY is set
+const runSmokeRegistry = process.env.RUN_SMOKE_REGISTRY === '1';
+(runSmokeRegistry ? test : test.skip)('npm package can be installed and imported from registry (smoke test)', async () => {
   // Use a temp directory for the test
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'mock-d1-smoke-registry-'));
   const origCwd = process.cwd();

@@ -1,12 +1,21 @@
 {
-  "name": "@variablesoftware/ts-template",
+  "name": "@variablesoftware/ts-merkle",
   "version": "0.0.0",
-  "description": "🎛️🧩🚀 A fun, lightweight, structured template for TypeScript projects.",
+  "description": "🌳🔗🛡️ A TypeScript library for creating and verifying Merkle trees.",
   "keywords": [
     "template",
     "structured",
     "typescript",
-    "debug"
+    "debug",
+    "merkle",
+    "tree",
+    "hash",
+    "proof",
+    "cryptography",
+    "hashing",
+    "cryptographic",
+    "data",
+    "structure"
   ],
   "author": {
     "name": "Rob Friedman",
@@ -32,6 +41,7 @@
     "**/*.{ts,js,mjs,cts}": "eslint --fix"
   },
   "scripts": {
+    "prepack": "yarn build",
     "build": "yarn rollup -c && yarn minify; ls -lah dist",
     "prepare": "yarn husky install",
     "watch:build": "yarn rollup -c --watch",
@@ -69,17 +79,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/variablesoftware/ts-template"
+    "url": "https://github.com/variablesoftware/ts-merkle.git"
   },
   "license": "MIT",
   "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538",
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250509.0",
     "@eslint/js": "^9.26.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/node": "^22.15.17",
     "@typescript-eslint/eslint-plugin": "^8.32.0",
     "@typescript-eslint/parser": "^8.32.0",
     "@typescript-eslint/typescript-estree": "^8.32.0",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.3",
-    "typescript": "^5.8.3"
+    "husky": "^9.1.7",
+    "merkletreejs": "^0.5.2",
+    "rollup": "^4.40.2",
+    "terser": "^5.39.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.3"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1"
   }
 }

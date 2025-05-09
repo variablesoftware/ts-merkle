@@ -1,3 +1,8 @@
+/**
+ * Smoke test for npm package installability and importability.
+ *
+ * @module tests/integration/smoke.test
+ */
 import { test } from 'vitest';
 
 // Quick smoke test for npm package installability and importability

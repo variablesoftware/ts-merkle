@@ -1,3 +1,47 @@
+# ts-merkle 🌳🔗🛡️
+
+A lightweight, fast, and auditable TypeScript library for creating and verifying Merkle trees.
+
+- ⚡ **Fast**: Minimal dependencies, optimized for performance
+- 🧩 **Interoperable**: Compatible with popular libraries like `merkletreejs`
+- 🔒 **Secure**: Uses SHA-256 and strong cryptographic primitives
+- 🧪 **Well-tested**: Robust test suite with edge cases, stress, and cross-library checks
+
+## Install
+
+```sh
+yarn add @variablesoftware/ts-merkle
+# or
+npm install @variablesoftware/ts-merkle
+```
+
+## Usage
+
+```ts
+import { computeMerkleRoot, computeMerkleProof, verifyMerkleProof } from '@variablesoftware/ts-merkle';
+
+const leaves = [
+  new Uint8Array([1]),
+  new Uint8Array([2]),
+  new Uint8Array([3]),
+  new Uint8Array([4])
+];
+const root = computeMerkleRoot(leaves);
+const proof = computeMerkleProof(leaves, 2);
+const isValid = verifyMerkleProof(leaves[2], proof, root);
+console.log('Proof valid?', isValid); // true
+```
+
+## Features
+- Merkle root computation (with/without padding, sorting)
+- Proof generation and verification
+- Cross-library compatibility (see docs/)
+- Fully typed, TSDoc documented
+
+## See Also
+- [docs/](./docs/) for advanced usage, benchmarks, and comparisons
+- [tests/](./tests/) for robust test coverage
+
 ---
 
 ## Badges
@@ -28,3 +72,5 @@ MIT © Rob Friedman / Variable Software
 - Works well in diverse, multilingual, and inclusive developer environments
 
 ---
+
+Made with ❤️ by Variable Software

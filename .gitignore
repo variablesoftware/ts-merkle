@@ -1,3 +1,4 @@
+docs/legacy/
 # Yarn PnP loader files (Yarn 2+)
 .pnp.*
 .yarn/cache/
