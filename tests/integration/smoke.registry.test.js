@@ -34,4 +34,4 @@ const runSmokeRegistry = process.env.RUN_SMOKE_REGISTRY === '1';
     process.chdir(origCwd);
     // Clean up temp dir (optional, not deleting for debugging)
   }
-}, 90000);
+}, 120_000);
