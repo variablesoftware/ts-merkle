@@ -3,24 +3,24 @@
 #
 # Usage: ./sign-release.sh <artifact-file>
 #
-# This script computes a Merkle root of all release artifact hashes (tracked in releases.hashes),
+# This script computes a Merkle root of all release artifact hashes (tracked in releases.sha512.hashes),
 # appends the new hash, and outputs the new Merkle root. Intended for use in release automation.
 
 set -euo pipefail
 
 ARTIFACT="$1"
-HASH_FILE="releases.hashes"
+HASH_FILE="releases.sha512.hashes"
 MERKLE_SCRIPT=".github/scripts/merkle-root.mjs"
 
-# 1. Hash the artifact (SHA-256)
-ARTIFACT_HASH=$(shasum -a 256 "$ARTIFACT" | awk '{print $1}')
+# 1. Hash the artifact (SHA-512)
+ARTIFACT_HASH=$(shasum -a 512 "$ARTIFACT" | awk '{print $1}')
 echo "$ARTIFACT_HASH" >> "$HASH_FILE"
 
 # 2. Compute the Merkle root using ts-merkle
 node <<'EOF'
 const { computeMerkleRoot } = require('../dist/index.js');
 const fs = require('fs');
-const hashes = fs.readFileSync('releases.hashes', 'utf8')
+const hashes = fs.readFileSync('releases.sha512.hashes', 'utf8')
   .trim().split('\n').map(line => Buffer.from(line, 'hex'));
 const root = computeMerkleRoot(hashes);
 console.log('🌳 Merkle root for all releases:', Buffer.from(root).toString('hex'));

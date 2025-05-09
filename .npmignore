@@ -1,0 +1,3 @@
+# Ignore Merkle release hash chains
+releases.hashes
+releases.sha512.hashes
