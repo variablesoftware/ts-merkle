@@ -1,0 +1,43 @@
+# unified.instructions.md
+
+#githubRepo @variablesoftware/logface
+#githubRepo @variablesoftware/mock-d1
+#githubRepo @variablesoftware/mock-kv
+#githubRepo @variablesoftware/ts-retry-backoff
+#githubRepo @variablesoftware/ts-merkle
+#githubRepo @variablesoftware/ts-brand-utils
+#githubRepo @variablesoftware/ts-template-repo
+
+[]: # You can adjust the `environment_defaults`, `inference_engine`, and other settings as needed.
+[]: # 
+[]: # For more information on customization options, refer to the official documentation:
+[]: # 
+[]: # - [ChatGPT API Documentation](https://platform.openai.com/docs/api-reference)
+[]: # - [ChatGPT Customization Guide](https://platform.openai.com/docs/guides/gpt/customization)
+[]: # - [VSCode Copilot Customization](https://code.visualstudio.com/docs/copilot/copilot-customization)
+[]: # For more information on using ChatGPT for development tasks, check out the following resources:
+[]: # 
+[]: # - [ChatGPT for Developers](https://platform.openai.com/docs/guides/gpt/developers)
+[]: # - [ChatGPT API Reference](https://platform.openai.com/docs/api-reference)
+[]: # - [VSCode Copilot Documentation](https://code.visualstudio.com/docs/copilot/copilot-overview)
+[]: #
+[]: # - [VSCode Copilot Customization](https://code.visualstudio.com/docs/copilot/copilot-customization)
+[]: # 
+[]: # 
+[]: # ## References
+[]: # 
+[]: # - [ChatGPT API Documentation](https://platform.openai.com/docs/api-reference)
+[]: # - [ChatGPT Customization Guide](https://platform.openai.com/docs/guides/gpt/customization)
+[]: # - [VSCode Copilot Documentation](https://code.visualstudio.com/docs/copilot/copilot-overview)
+[]: # - [VSCode Copilot Customization](https://code.visualstudio.com/docs/copilot/copilot-customization)
+[]: #
+[]: # - [ChatGPT for Developers](https://platform.openai.com/docs/guides/gpt/developers)
+[]: # - [ChatGPT API Reference](https://platform.openai.com/docs/api-reference)
+[]: # 
+[]: # ## Additional Notes
+[]: # 
+[]: # This file is designed to be easily extensible and customizable. Feel free to add additional
+[]: # sections or modify existing ones as needed for your project.
+[]: #
+# https://code.visualstudio.com/docs/copilot/copilot-customization
+

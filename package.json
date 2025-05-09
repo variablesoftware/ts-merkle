@@ -1,0 +1,85 @@
+{
+  "name": "@variablesoftware/ts-template",
+  "version": "0.0.0",
+  "description": "🎛️🧩🚀 A fun, lightweight, structured template for TypeScript projects.",
+  "keywords": [
+    "template",
+    "structured",
+    "typescript",
+    "debug"
+  ],
+  "author": {
+    "name": "Rob Friedman",
+    "email": "bunkcode@variablesoftware.com",
+    "url": "https://github.com/variablesoftware"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/index.min.js",
+    "dist/index.min.js.map"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "type": "module",
+  "lint-staged": {
+    "**/*.{ts,js,mjs,cts}": "eslint --fix"
+  },
+  "scripts": {
+    "build": "yarn rollup -c && yarn minify; ls -lah dist",
+    "prepare": "yarn husky install",
+    "watch:build": "yarn rollup -c --watch",
+    "build:release": "yarn build",
+    "minify:options": "yarn terser --timings --compress --mangle --toplevel --source-map includeSources ",
+    "minify": "yarn minify:options dist/*.js --output dist/index.min.js",
+    "prebuild": "yarn clean",
+    "prepublishOnly": "yarn test:build",
+    "check:syntax": "yarn check:json && yarn lint && yarn check:shell && yarn check:yaml && yarn check:gitignore",
+    "check:json": "find . -name '*.json' -not -path './node_modules/*' -exec sh -c 'echo Checking {} && jq empty {}' \\;",
+    "check:shell": "find . -name '*.sh' -not -path './node_modules/*' -exec sh -c 'echo Checking {} && shellcheck --shell=sh --severity=style {}' \\; || true",
+    "check:yaml": "find . -name '*.yml' -o -name '*.yaml' -not -path './node_modules/*' -exec sh -c 'echo Checking {} && yamllint {}' \\;",
+    "check:gitignore": "echo Checking .gitignore && git check-ignore -v .gitignore || true",
+    "check": "yarn check:syntax",
+    "clean": "rm -rf dist",
+    "clean:all:tags": "rm -rf dist && git tag -d $(git tag)",
+    "dev": "yarn vitest watch",
+    "format": "yarn format:all",
+    "format:all": "prettier --write --log-level error .",
+    "lint": "eslint --stats . --ext .ts,.tsx",
+    "lint:fix": "eslint --stats . --ext .ts,.tsx --fix-dry-run",
+    "lint:fix:nodry": "eslint --stats . --ext .ts,.tsx --fix",
+    "prettier:check": "prettier --check .",
+    "publish:npm": "yarn npm publish --access public",
+    "test": "vitest run",
+    "watch:test": "yarn vitest --watch",
+    "build:test": "yarn clean && yarn build && yarn test",
+    "corepack:go": "corepack enable && corepack prepare yarn@4.9.1 --activate",
+    "upgrade:latest": "yarn set version stable && yarn upgrade-interactive",
+    ":patch": "yarn version patch",
+    ":minor": "yarn version minor",
+    ":major": "yarn version major",
+    "release": "yarn clean && yarn build:release && git push && git push --tags && yarn npm publish --access public",
+    "release:dry": "yarn clean && yarn build:release && npm pack --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/variablesoftware/ts-template"
+  },
+  "license": "MIT",
+  "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538",
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "@typescript-eslint/typescript-estree": "^8.32.0",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.3",
+    "typescript": "^5.8.3"
+  }
+}
