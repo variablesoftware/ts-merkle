@@ -1,6 +1,6 @@
-# ts-merkle 🌳🔗🛡️
+# @variablesoftware/ts-merkle 🌳🔗🛡️
 
-A lightweight, fast, and auditable TypeScript library for creating and verifying Merkle trees.
+> 🌳🔗🛡️ A lightweight, fast, and auditable TypeScript library for creating and verifying Merkle trees.
 
 - ⚡ **Fast**: Minimal dependencies, optimized for performance
 - 🧩 **Interoperable**: Compatible with popular libraries like `merkletreejs`
