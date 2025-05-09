@@ -81,7 +81,7 @@
     ":major": "yarn version major",
     "release": "semantic-release",
     "release2": "yarn clean && yarn build:release && git push && git push --tags && yarn npm publish --access public && ./scripts/sign-release.sh package.json",
-    "release:dry": "yarn clean && yarn build:release && npm pack --dry-run"
+    "release2:dry": "yarn clean && yarn build:release && npm pack --dry-run"
   },
   "repository": {
     "type": "git",
