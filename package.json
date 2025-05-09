@@ -54,7 +54,7 @@
     "minify:options": "yarn terser --timings --compress --mangle --toplevel --source-map includeSources ",
     "minify": "yarn minify:options dist/*.js --output dist/index.min.js",
     "prebuild": "yarn clean",
-    "prepublishOnly": "yarn test:build",
+    "prepublishOnly": "yarn build:test",
     "check:syntax": "yarn check:json && yarn lint && yarn check:shell && yarn check:yaml && yarn check:gitignore",
     "check:json": "find . -name '*.json' -not -path './node_modules/*' -exec sh -c 'echo Checking {} && jq empty {}' \\;",
     "check:shell": "find . -name '*.sh' -not -path './node_modules/*' -exec sh -c 'echo Checking {} && shellcheck --shell=sh --severity=style {}' \\; || true",
