@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "🌳🔗🛡️ A TypeScript library for creating and verifying Merkle trees.",
   "keywords": [
-    "template",
     "structured",
     "typescript",
     "debug",
@@ -80,7 +79,9 @@
     ":patch": "yarn version patch",
     ":minor": "yarn version minor",
     ":major": "yarn version major",
-    "release": "yarn clean && yarn build:release && git push && git push --tags && yarn npm publish --access public && ./scripts/sign-release.sh package.json",
+            "release": "semantic-release",
+
+    "release2": "yarn clean && yarn build:release && git push && git push --tags && yarn npm publish --access public && ./scripts/sign-release.sh package.json",
     "release:dry": "yarn clean && yarn build:release && npm pack --dry-run"
   },
   "repository": {
@@ -104,6 +105,7 @@
     "husky": "^9.1.7",
     "merkletreejs": "^0.5.2",
     "rollup": "^4.40.2",
+    "semantic-release": "^23.0.0",
     "terser": "^5.39.0",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",
