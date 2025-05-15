@@ -26,7 +26,7 @@ jobs:
       - run: yarn install --immutable
       - run: yarn lint
       - run: yarn build
-      - run: yarn test --printConsoleTrace
+      - run: yarn vitest --printConsoleTrace
       
 
   # doesn't actually work, yet.
