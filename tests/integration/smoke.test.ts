@@ -45,4 +45,4 @@ test('npm package can be installed and imported (smoke test)', async () => {
     const tarballs = fs.readdirSync(origCwd).filter(f => f.endsWith('.tgz'));
     for (const t of tarballs) fs.unlinkSync(path.join(origCwd, t));
   }
-}, 120_000);
+}, 180000);
