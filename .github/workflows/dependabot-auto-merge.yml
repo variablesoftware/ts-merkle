@@ -62,8 +62,8 @@ jobs:
       - run: corepack enable && corepack prepare yarn@4.9.1 --activate
       #- run: cat /home/runner/work/_temp/.npmrc
       #- run: cat /home/runner/work/_temp/.yarnrc.yml
-      - run: yarn --version
-      - run: cat ./.yarnrc.yml
+      #- run: yarn --version
+      #- run: cat ./.yarnrc.yml
 
       - run: yarn install --immutable
         #- run: yarn add -D husky
