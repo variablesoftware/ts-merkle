@@ -14,17 +14,17 @@ function run(cmd, opts = {}) {
 const runSmokeRegistry = process.env.RUN_SMOKE_REGISTRY === '1';
 (runSmokeRegistry ? test : test.skip)('npm package can be installed and imported from registry (smoke test)', async () => {
   // Use a temp directory for the test
-  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'mock-d1-smoke-registry-'));
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ts-merkle-smoke-registry-'));
   const origCwd = process.cwd();
   try {
     process.chdir(tmpDir);
     run('npm init -y');
     // Install the package from the registry (latest version)
-    run('npm install @variablesoftware/mock-d1');
+    run('npm install @variablesoftware/ts-merkle');
     // Read the installed package's package.json to find the entry point
-    const pkgJson = require(path.join(tmpDir, 'node_modules', '@variablesoftware', 'mock-d1', 'package.json'));
+    const pkgJson = require(path.join(tmpDir, 'node_modules', '@variablesoftware', 'ts-merkle', 'package.json'));
     const entry = pkgJson.main || 'index.js';
-    const entryPath = path.join(tmpDir, 'node_modules', '@variablesoftware', 'mock-d1', entry);
+    const entryPath = path.join(tmpDir, 'node_modules', '@variablesoftware', 'ts-merkle', entry);
     await import(entryPath);
     console.log('Smoke test passed: package can be installed and imported from registry.');
   } catch (e) {
@@ -34,4 +34,4 @@ const runSmokeRegistry = process.env.RUN_SMOKE_REGISTRY === '1';
     process.chdir(origCwd);
     // Clean up temp dir (optional, not deleting for debugging)
   }
-}, 180000);
+}, 180_000);
