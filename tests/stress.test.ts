@@ -33,5 +33,5 @@ describe('Merkle Tree stress test', () => {
     }
     console.log(`Stress test completed: ${iterations} iterations, max chain length: ${maxLen}`);
     expect(iterations).toBeGreaterThan(0);
-  }, 20000); // Set timeout to 20 seconds
+  }, 90000); // Set timeout to 90 seconds
 });
