@@ -61,7 +61,7 @@ jobs:
           #token: ${VS_NPM_TOKEN}
       - run: corepack enable && corepack prepare yarn@4.9.1 --activate
       #- run: cat /home/runner/work/_temp/.npmrc
-      - run: cat /home/runner/work/_temp/.yarnrc.yml
+      #- run: cat /home/runner/work/_temp/.yarnrc.yml
       - run: yarn --version
       - run: cat ./.yarnrc.yml
 
