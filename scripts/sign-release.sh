@@ -57,11 +57,11 @@ fi
 ARTIFACT_HASH=$(shasum -a 512 "$ARTIFACT" | awk '{print $1}')
 NEW_LINE="$ARTIFACT_HASH $ARTIFACT $VERSION $DATE"
 
-# Only append if the last line is different and the hash is not already present for this artifact/version
-if [ ! -f "$HASH_FILE" ] || ! grep -q "^$ARTIFACT_HASH $ARTIFACT $VERSION" "$HASH_FILE"; then
+# Only append if the last line is different
+if [ ! -f "$HASH_FILE" ] || [ "$(tail -n 1 "$HASH_FILE" 2>/dev/null)" != "$NEW_LINE" ]; then
   echo "$NEW_LINE" >> "$HASH_FILE"
 else
-  echo "No change: hash entry already exists for this artifact/version, not appending duplicate." >&2
+  echo "No change: latest hash entry is identical, not appending duplicate." >&2
 fi
 
 # 2. Compute the Merkle root using ts-merkle (over just the hashes)
