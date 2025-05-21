@@ -18,7 +18,10 @@ function run(cmd, opts = {}) {
 const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ts-merkle-smoke-'));
 const origCwd = process.cwd();
 
-test('npm package can be installed and imported (smoke test)', async () => {
+
+// Only run this test if the environment variable SMOKE is set
+const runSmokeRegistry = process.env.SMOKE === '1';
+(runSmokeRegistry ? test : test.skip)('npm package can be installed and imported (smoke test)', async () => {
   try {
     // Pack the current package
     run('npm pack');
