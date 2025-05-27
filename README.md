@@ -1,5 +1,13 @@
 # @variablesoftware/ts-merkle 🌳🔗🛡️
 
+[![Test Suite](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/variablesoftware/ts-merkle/actions)
+[![NPM version](https://img.shields.io/npm/v/@variablesoftware/ts-merkle?style=flat-square)](https://www.npmjs.com/package/@variablesoftware/ts-merkle)
+[![License](https://img.shields.io/github/license/variablesoftware/ts-merkle?style=flat-square)](https://github.com/variablesoftware/ts-merkle/blob/main/LICENSE.txt)
+[![Coverage](https://img.shields.io/coveralls/github/variablesoftware/ts-merkle/main)](https://coveralls.io/github/variablesoftware/ts-merkle)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/@variablesoftware/ts-merkle)](https://bundlephobia.com/package/@variablesoftware/ts-merkle)
+[![Downloads](https://img.shields.io/npm/dm/@variablesoftware/ts-merkle)](https://www.npmjs.com/package/@variablesoftware/ts-merkle)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/variablesoftware/ts-merkle/pulls)
+
 > 🌳🔗🛡️ A lightweight, fast, and auditable TypeScript library for creating and verifying Merkle trees.
 
 - ⚡ **Fast**: Minimal dependencies, optimized for performance
@@ -41,14 +49,6 @@ console.log('Proof valid?', isValid); // true
 ## See Also
 - [docs/](./docs/) for advanced usage, benchmarks, and comparisons
 - [tests/](./tests/) for robust test coverage
-
----
-
-## Badges
-
-[![Test Suite](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/variablesoftware/template/actions)
-[![NPM version](https://img.shields.io/npm/v/@variablesoftware/template?style=flat-square)](https://www.npmjs.com/package/@variablesoftware/template)
-[![License](https://img.shields.io/github/license/variablesoftware/template?style=flat-square)](https://github.com/variablesoftware/template/blob/main/LICENSE.txt)
 
 ---
 
