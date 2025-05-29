@@ -68,10 +68,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cloudflare/workers-types@npm:^4.20250525.0":
-  version: 4.20250525.0
-  resolution: "@cloudflare/workers-types@npm:4.20250525.0"
-  checksum: 10c0/cbc00e0179b24498dd8ec2251ce2f06ca96d477bd8ad3da72a6c6e4831865a1129924aa310ea83b1a209d03883b33c5a4bc72d16cad0dd6bb12ecc24d0f27467
+"@cloudflare/workers-types@npm:^4.20250529.0":
+  version: 4.20250529.0
+  resolution: "@cloudflare/workers-types@npm:4.20250529.0"
+  checksum: 10c0/ccf66c4adbd9af84b0188f7b34c8b305b24a7346e07ff06a142159084fc89397b20a6cc8693b1170cba74d62e10ef8a6289a2295670e2ab7ea9e99117c8e9b1e
   languageName: node
   linkType: hard
 
@@ -1385,12 +1385,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.15.22":
-  version: 22.15.22
-  resolution: "@types/node@npm:22.15.22"
+"@types/node@npm:^22.15.24":
+  version: 22.15.24
+  resolution: "@types/node@npm:22.15.24"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10c0/b160a348a02a5564887fa75be4278bb8a6d13477f6715677793fd911e5ceae08f84622fd18d246f1edb0d39bf70bbdfb41c8e59169d4e933a517a01fa2516e7c
+  checksum: 10c0/16c38e98168fa6c3d2f2b6e95f14f80878d969b39093bc5384385a884d73a7fe361c563b36f14bc27536b337f5baad74321f717b31d2c061b9c48074567eb8c6
   languageName: node
   linkType: hard
 
@@ -1539,12 +1539,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@variablesoftware/ts-merkle@workspace:."
   dependencies:
-    "@cloudflare/workers-types": "npm:^4.20250525.0"
+    "@cloudflare/workers-types": "npm:^4.20250529.0"
     "@eslint/js": "npm:^9.27.0"
     "@semantic-release/changelog": "npm:^6.0.3"
     "@semantic-release/git": "npm:^10.0.1"
     "@semantic-release/github": "npm:^11.0.3"
-    "@types/node": "npm:^22.15.22"
+    "@types/node": "npm:^22.15.24"
     "@typescript-eslint/eslint-plugin": "npm:^8.33.0"
     "@typescript-eslint/parser": "npm:^8.33.0"
     "@typescript-eslint/typescript-estree": "npm:^8.33.0"
