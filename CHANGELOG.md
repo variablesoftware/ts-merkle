@@ -1,3 +1,11 @@
+## [0.0.5](https://github.com/variablesoftware/ts-merkle/compare/v0.0.4...v0.0.5) (2025-06-01)
+
+
+### Bug Fixes
+
+* 🔧 fix(workflows): correct husky install command in prepare script ([ce5b85c](https://github.com/variablesoftware/ts-merkle/commit/ce5b85c535f74fee036fa2df1d2285ebd643e115))
+* 🛠️ fix(workflows): remove empty commit message from bump script ([e24a588](https://github.com/variablesoftware/ts-merkle/commit/e24a588bdc2f8e35ba6dc85f3c53c0e79618355c))
+
 ## [0.0.4](https://github.com/variablesoftware/ts-merkle/compare/v0.0.3...v0.0.4) (2025-05-29)
 
 
