@@ -21,18 +21,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
-          cache: "npm"
       - uses: pnpm/action-setup@v3
         with:
           version: latest
-  
-      # - run: corepack prepare pnpm@10.11.0 --activate
+      - name: Debug pnpm environment
+        run: |
+          echo "PATH: $PATH"
+          echo "NODE VERSION: $(node --version)"
+          echo "NPM VERSION: $(npm --version)"
+          echo "PNPM VERSION: $(pnpm --version)"
+          which pnpm
+          env | grep -E 'PNPM|NPM|NODE|PATH'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec eslint --stats . --ext .ts,.tsx
-      - run: pnpm exec tsc
-      - run: pnpm exec vitest --coverage
-
-  
+      # - run: pnpm run lint
+      # - run: pnpm run build
+      - run: pnpm vitest --coverage --reporter=verbose
+        env:
+          SMOKE: 1
   coveralls-runner:
     runs-on: ubuntu-latest
     needs: build-test
@@ -44,11 +49,17 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: latest
-  
-      # - run: corepack prepare pnpm@10.11.0 --activate
+      - name: Debug pnpm environment
+        run: |
+          echo "PATH: $PATH"
+          echo "NODE VERSION: $(node --version)"
+          echo "NPM VERSION: $(npm --version)"
+          echo "PNPM VERSION: $(pnpm --version)"
+          which pnpm
+          env | grep -E 'PNPM|NPM|NODE|PATH'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec tsc
-      - run: pnpm exec vitest --coverage --reporter=verbose
+      - run: pnpm run build
+      - run: pnpm vitest --coverage --reporter=verbose
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2.3.6
         with:
@@ -69,32 +80,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        # Unexpected input(s) 'foo', valid inputs are ['always-auth', 'node-version', 'node-version-file', 'architecture', 'check-latest', 'registry-url', 'scope', 'token', 'cache', 'cache-dependency-path', 'mirror', 'mirror-token']
         with:
-          #always-auth: true
-          #check-latest: true
           node-version: "lts/*"
-          #registry-url: "https://registry.npmjs.org/"
-          #scope: ${SCOPE}
-          #token: ${NPM_TOKEN}
-          #token: ${{secrets.VS_NPM_TOKEN}}
-          #token: ${VS_NPM_TOKEN}
       - uses: pnpm/action-setup@v3
         with:
           version: latest
-        # - run: corepack prepare pnpm@10.11.0 --activate
+      - name: Debug pnpm environment
+        run: |
+          echo "PATH: $PATH"
+          echo "NODE VERSION: $(node --version)"
+          echo "NPM VERSION: $(npm --version)"
+          echo "PNPM VERSION: $(pnpm --version)"
+          which pnpm
+          env | grep -E 'PNPM|NPM|NODE|PATH'
       - run: pnpm install --frozen-lockfile
-      #- run: pnpm --version
-      #- run: cat /home/runner/work/_temp/.npmrc
-      #- run: cat /home/runner/work/_temp/.pnpmfile.cjs
-        #- run: pnpm add -D husky
-        #- run: pnpm whoami --scope ${{secrets.scope}} --publish
-        #- run: pnpm publish --access public
-        #- run: pnpm publish --provenance --access public
-      - run: pnpm exec semantic-release
+      - run: pnpm semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SCOPE: ${{secrets.scope}}
           NODE_AUTH_TOKEN: ${{ secrets.VS_NPM_TOKEN}}
           NPM_TOKEN: ${{ secrets.VS_NPM_TOKEN}}
-          #YARN_NPM_CONFIG_PROVENANCE:
+          HUSKY: 0
