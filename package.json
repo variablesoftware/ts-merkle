@@ -46,7 +46,7 @@
     "**/*.{ts,js,mjs,cts}": "eslint --fix"
   },
   "scripts": {
-    "bump": "git commit --allow-empty -m '🛠️ fix: Empty commit message'",
+    "bump": "git commit --allow-empty -m 'fix: 🛠️ Empty commit message'",
     "upgrade:latest": "pnpm up --latest",
     "prepack": "pnpm run build",
     "build": "pnpm exec tsc",
