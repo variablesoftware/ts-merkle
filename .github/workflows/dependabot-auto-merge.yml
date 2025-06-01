@@ -69,10 +69,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: latest
-  
         # Unexpected input(s) 'foo', valid inputs are ['always-auth', 'node-version', 'node-version-file', 'architecture', 'check-latest', 'registry-url', 'scope', 'token', 'cache', 'cache-dependency-path', 'mirror', 'mirror-token']
         with:
           #always-auth: true
@@ -83,7 +79,10 @@ jobs:
           #token: ${NPM_TOKEN}
           #token: ${{secrets.VS_NPM_TOKEN}}
           #token: ${VS_NPM_TOKEN}
-      # - run: corepack prepare pnpm@10.11.0 --activate
+      - uses: pnpm/action-setup@v3
+        with:
+          version: latest
+        # - run: corepack prepare pnpm@10.11.0 --activate
       - run: pnpm install --frozen-lockfile
       #- run: pnpm --version
       #- run: cat /home/runner/work/_temp/.npmrc
