@@ -5,10 +5,9 @@ source ~/.nvm/nvm.sh
 nvm use 22 --lts
 set -x
 
-corepack enable && corepack prepare yarn@4.9.1 --activate
-which yarn node git
+which pnpm node git
 echo ${PWD}
 echo ${PATH}
-yarn lint || exit 1
-#yarn lint && yarn build:test || exit 1
+pnpm exec eslint --stats . --ext .ts,.tsx || exit 1
+#pnpm exec eslint --stats . --ext .ts,.tsx && pnpm run build:test || exit 1
 gitleaks dir . || exit 1

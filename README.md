@@ -18,7 +18,7 @@
 ## Install
 
 ```sh
-yarn add @variablesoftware/ts-merkle
+pnpm add @variablesoftware/ts-merkle
 # or
 npm install @variablesoftware/ts-merkle
 ```

@@ -1,15 +1,10 @@
 *.swp
 docs/legacy/
-# Yarn PnP loader files (Yarn 2+)
-.pnp.*
-.yarn/cache/
-.yarn/unplugged/
-.yarn/build-state.yml
-.yarn/install-state.gz
+# pnpm store (optional, if you use a global store)
+.pnpm-store/
 
 # Node dependencies
 node_modules/
-.yarn/
 
 # Output directories
 dist/
