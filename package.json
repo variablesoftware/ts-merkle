@@ -1,6 +1,6 @@
 {
   "name": "@variablesoftware/ts-merkle",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "🌳🔗🛡️ A TypeScript library for creating and verifying Merkle trees.",
   "keywords": [
     "template",
