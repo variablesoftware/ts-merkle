@@ -91,7 +91,7 @@
   "license": "MIT",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250823.0",
-    "@eslint/js": "^9.33.0",
+    "@eslint/js": "^9.34.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.4",
