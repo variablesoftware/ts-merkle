@@ -48,8 +48,8 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       merkletreejs:
-        specifier: ^0.5.2
-        version: 0.5.2
+        specifier: ^0.6.0
+        version: 0.6.0
       semantic-release:
         specifier: ^25.0.1
         version: 25.0.1(typescript@5.9.3)
@@ -1566,8 +1566,8 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  merkletreejs@0.5.2:
-    resolution: {integrity: sha512-MHqclSWRSQQbYciUMALC3PZmE23NPf5IIYo+Z7qAz5jVcqgCB95L1T9jGcr+FtOj2Pa2/X26uG2Xzxs7FJccUg==}
+  merkletreejs@0.6.0:
+    resolution: {integrity: sha512-cyiratjG7fyHsa4DVfYVPxcoAh3zmUuOPItIfZex8f0pUVptNEmiiTOoeS0JnDDTWy+n3FKnI0K1gCzti7rGMg==}
     engines: {node: '>= 7.6.0'}
 
   micromatch@4.0.8:
@@ -3870,7 +3870,7 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  merkletreejs@0.5.2:
+  merkletreejs@0.6.0:
     dependencies:
       buffer-reverse: 1.0.1
       crypto-js: 4.2.0
